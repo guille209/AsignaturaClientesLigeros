@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Mi primera tabla</title>
+	<link rel="stylesheet" type="text/css" href="TablaStyle.css">
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<td class="titulo" colspan="6">CALENDARIO SEMANAL</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="horario"></td>
+				<td>Lunes</td>
+				<td>Martes</td>
+				<td>Miercoles</td>
+				<td>Jueves</td>
+				<td>Viernes</td>
+			</tr>
+			<tr>
+				<td class="horario">9:00 - 10:00</td>
+				<td>GDSII</td>
+				<td rowspan="2">Algoritmica</td>
+				<td>Estadistica</td>
+				<td rowspan="2">Algoritmica</td>
+				<td>GDSII</td>
+
+			</tr>
+			<tr>
+				<td class="horario">10:00 - 11:00</td>
+				<td>Calculo numerico</td>
+				<td>Calculo numerico</td>
+				<td>Simulacion</td>
+			</tr>
+			<tr>
+				<td class="horario">11:00 - 11:30</td>
+				<td class="descanso" colspan="6">DESCANSO</td>
+			</tr>
+			<tr>
+				<td class="horario">11:30 - 12:30</td>
+				<td rowspan="2">Programacion II</td>
+				<td></td>
+				<td rowspan="2">TALF</td>
+				<td rowspan="2" colspan="2">Programacion II</td>
+			</tr>
+			<tr>
+				<td class="horario">12:30 - 13:30</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td class="footer" colspan="6">A partir de 21/12 el calendario sera modificado</td>
+			</tr>
+		</tfoot>
+	</table>
+
+</body>
+</html>

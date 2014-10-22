@@ -1,0 +1,28 @@
+@CHARSET "ISO-8859-1";
+
+.horario {
+	background-color: yellow;
+}
+
+thead {
+	background-color: blue;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+.titulo {
+	text-align: center;
+	color: white;
+}
+
+.descanso {
+	text-align: center;
+	background-color: red;
+}
+
+tfoot {
+	background-color: #0ef4ed;
+	text-align: center;
+}

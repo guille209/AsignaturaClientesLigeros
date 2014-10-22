@@ -1,0 +1,46 @@
+<html>
+<head><title>EJERCICIO 1 JAVASCRIPT</title></head>
+<body>
+
+	<!--Hacer un formulario con dos campos y un boton, 
+	el usuario introduce un numero determinado de dias
+	en el otro sale la fecha que corresponde a dentro de 90 dias
+	La funcion que procesa no recibe ningun parametro
+	para coger un document.getEelementbyid("").value
+	para mostrar igual
+	En la funcion un objeto tipo Date
+	accedo al gettime con el numero de milisegundos
+	numero de dias por 24 por 60 por 60 por 1000-->
+
+	<input name="dias" id="dias"type="text" placeholder="Numero de dias"/>
+	<input name="fecha" id="fecha" type ="text" disabled/>
+	<button type="submit" onClick="mifuncion()" name="calcular">Calcular</button>
+
+
+	<script language='JavaScript'>
+
+	function mifuncion(){
+		document.getElementById("fecha").placeholder="Calculando fecha...";
+		var numeroDias = document.getElementById('dias').value
+		var fechaActual = new Date();
+		fechaActual.setMilliseconds(fechaActual.getMilliseconds()+numeroDias*24*60*60*1000);
+		document.getElementById("fecha").value = fechaActual;
+
+	}
+	/*Ejercicio calculo de niff
+	var Letras = new Array('T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E','T');
+	var dni;
+	dni = prompt("Please enter your DNI");	
+	var numero = dni.slice(0,dni.length-1);
+	var letra = dni.slice(dni.length-1,dni.length);
+	var posicion = numero%23;
+	if(letra == Letras[posicion]){
+		document.write("DNI Correcto");
+	}else{
+		document.write("DNI Incorrecto");
+	}
+	*/
+	</script>
+
+</body>
+</html>
