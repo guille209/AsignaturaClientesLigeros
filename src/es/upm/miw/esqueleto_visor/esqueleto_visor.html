@@ -4,6 +4,8 @@
   <script language='javascript'>
   var fotos = new Array ('res/Img0.gif','res/Img1.gif','res/Img2.gif','res/Img3.gif');
   var actual = 0;
+  var america = new Array[];
+  var continentes = new Array[europa,africa,america,oceania,asia];
 
   function manejadorEventos(elEvento) {
     var evento = elEvento || window.event;
@@ -41,12 +43,12 @@
   var e = document.getElementById("selectContinentes");
   var strUser = e.options[e.selectedIndex].text;
   alert(strUser);
- }
+}
 
- document.onkeypress = manejadorEventos;
- 
+document.onkeypress = manejadorEventos;
 
- function comenzar(){
+
+function comenzar(){
   setInterval("cambiar()",1000);
 }
 
@@ -61,9 +63,6 @@ function cambiar(){
 
 function Parar(){
 }
-
-
-
 </script>
 
 </head>
@@ -94,8 +93,19 @@ function Parar(){
       <select id="selectContinentes" name="continentes" onchange="mostrarSeleccionada()">
         <option name ="europa" value="0">Europa</option>
         <option name ="africa" value="1">Africa</option>
-        <option name ="America" value="2">Portugalete</option>
-        <option name ="Oceania" value="3">Asia</option>
+        <option name ="america" value="2">Oceania</option>
+        <option name ="oceania" value="3">Asia</option>
+      </select>
+
+      <select id="selectPaises" name="paises">
+        <option name ="España" value="0">España</option>
+        <option name ="Francia" value="1">Francia</option>
+        <option name ="costademarfil" value="2">Costa de marfil</option>
+        <option name ="nigeria" value="3">Nigeria</option>
+        <option name ="australia" value="3">Australia</option>
+        <option name ="nuevazelanda" value="2">Nueva zelanda</option>
+        <option name ="japon" value="2">Japon</option>
+        <option name ="china" value="3">China</option>
       </select>
     </form>
   </body>
