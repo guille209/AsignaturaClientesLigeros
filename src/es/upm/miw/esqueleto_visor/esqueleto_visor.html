@@ -1,0 +1,103 @@
+<html>
+<head><title>Visor de imágenes</title>
+
+  <script language='javascript'>
+  var fotos = new Array ('res/Img0.gif','res/Img1.gif','res/Img2.gif','res/Img3.gif');
+  var actual = 0;
+
+  function manejadorEventos(elEvento) {
+    var evento = elEvento || window.event;
+   // codigo numerico correspondiente al caracter
+   var codigo = evento.keyCode || evento.keyCode;
+   var caracter = String.fromCharCode(codigo);
+   var posicion = parseInt(document.getElementById("imagen").style.left);
+   switch(caracter){
+    case 'a': 
+    posicion -= 10;
+    document.getElementById('imagen').style.left = posicion+"px";
+    
+    break;
+    case 'd': 
+    posicion +=10;
+    document.getElementById('imagen').style.left =posicion+"px";
+
+
+    break;
+    case 'w': 
+    posicion -= 10;
+    document.getElementById('imagen').style.top = posicion+"px";
+    
+    break;
+    case 's': 
+    posicion += 10;
+    document.getElementById('imagen').style.top = posicion+"px";
+    
+    break;
+  }
+   //Cambiar propiedad left de l aimagen
+ }
+
+ function mostrarSeleccionada(elEvento){
+  var e = document.getElementById("selectContinentes");
+  var strUser = e.options[e.selectedIndex].text;
+  alert(strUser);
+ }
+
+ document.onkeypress = manejadorEventos;
+ 
+
+ function comenzar(){
+  setInterval("cambiar()",1000);
+}
+
+function cambiar(){
+  if(actual<fotos.length){
+    actual++;
+  }else{
+    actual = 0;
+  }
+  document.getElementById("visor").src = fotos[actual];
+}
+
+function Parar(){
+}
+
+
+
+</script>
+
+</head>
+
+<body>
+  <center><font size=6 color='blue'>Visor de imágenes<br><br><Hr color='blue'><br>
+    <form name='formul'>
+     <table border=1>
+      <tr><td colspan='4' align='center'>
+        <image style="left" src="res/Img0.gif" name='visor' id="visor" height='150' width='165'>
+        </td>
+      </tr>
+      <tr>
+
+        <td align='center'>
+          <input type='button' onclick='comenzar()' value='  COMENZAR  '>
+        </td>
+        <td align='center'>
+          <input type='button' onclick='cambiar()' value='  CAMBIAR  '>
+        </td>
+
+      </tr>
+    </table>
+  </form>
+  <hr color='blue'></font></center>
+  <image style="position:absolute;left: 200px;top: 300px" src="res/Img0.gif" id="imagen" height='150' width='165'>
+    <form name="formularioSelect">
+      <select id="selectContinentes" name="continentes" onchange="mostrarSeleccionada()">
+        <option name ="europa" value="0">Europa</option>
+        <option name ="africa" value="1">Africa</option>
+        <option name ="America" value="2">Portugalete</option>
+        <option name ="Oceania" value="3">Asia</option>
+      </select>
+    </form>
+  </body>
+  </html>
+
