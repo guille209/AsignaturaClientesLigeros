@@ -1,107 +1,207 @@
 @CHARSET "ISO-8859-1";
 
-@font-face{
-	font-family: computerFont;
-	src:url(../res/fonts/Computerfont.ttf);
+@font-face {
+	font-family: titleFont;
+	src: url(../res/fonts/writesong.ttf);
 }
-body{
-	font-family: "computerFont","Times",serif;
+
+body {
+	font-family: 'titleFont', sans-serif;
 	height: 100%;
-	font-size: 23px;
-
+	font-size: 35px;
 }
-#tablaCabecera{
+
+h1 {
+	font-size: 50px;
+}
+
+h2 {
+	margin-left: 2%;
+	font-size: 40px;
+}
+#tablaTitulo{
 	width: 100%;
-
-}
-#logoUPM{
-	float:right;
-}
-#navbar{
-	background-color: rgba(239,239,239,0.3);
 }
 
-#navbar ul{
+td img {
+		float:right;
+}
 
+#navbar {
+	background-color: rgba(0, 255, 255, 0.4);
+}
+
+#navbar ul {
+	background: #efefef;
 	position: relative;
 	list-style-type: none;
 	text-align: right;
 }
+
 nav ul li {
-	display: inline; padding: 25px 40px;
+	display: inline;
+	padding: 25px 15px;
 }
-nav ul li a:hover{
-	background-color: rgba(239,239,239,0.8);
-	font-size: 24px;
+
+nav ul li:hover {
+	
 }
+
 nav ul li a {
-	color:inherit;
+	font-size: 30px;
+	color: inherit;
 	text-decoration: none;
-	text-shadow: 0 2px 1px rgba(0,0,0,0.3);
-	padding: 0% 2%;
+	text-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+	padding-right: 25px;
+	padding-left: 25px;
+	color: inherit;
 }
 
-#content{
-	border-color: yellow;
+nav ul li a:hover {
+	background-color: #d7d7d7;
+	font-size: 32px;
+}
+
+#itemPresentacion:active {
+	
+}
+
+#itemAsignaturas:active {
+	
+}
+
+#itemTecnologias:active {
+	
+}
+
+#itemsolicitud:active {
+	
+}
+
+.seccion {
+	border-color: black;
+	border-width: medium;
+	border-style: solid;
+	height: 66%;
+	width: 98%;
+	position: relative;
+	margin-top: 2%;
+}
+
+.content {
+	margin-top: 2%;
+	margin-bottom: 2%;
+	margin-left: 15%;
+	margin-right: 15%;
+	/* 	border-color: red;
 	border-width: thick;
-	border-style: solid;
-	margin-top: 3%;
-	
+	border-style: solid; */
 }
 
-.seccion{
-	border-color: black;
-	border-width: medium;
-	border-style: solid;
-	height:66%;
-	width:98%;
-	position: absolute;
-	margin-bottom:50px;	
+#presentacion {
+	background-color: rgba(255, 0, 0, 0.4);
 }
 
-
-#presentacion{
-	background-color: rgba(255,0,0,0.4);
-
-}
-#itemPresentacion:active{
-	
-	
-}
-#asignaturas{
-	background-color: rgba(0,255,0,0.4);
-	left:1350px;	
-	display:none;
-}
-#itemAsignaturas:active{
-
-}
-#tecnologias{
-	background-color: rgba(0,0,255,0.4);
-	right:1350px;
-	display:none;
-}
-#itemTecnologias:active{
-
-}
-#solicitud{
-	background-color: rgba(255,255,0,0.4);
-	top:600px;
-	display:none;	
-}
-#itemsolicitud:active{
-
+#asignaturas {
+	background-color: rgba(0, 255, 0, 0.4);
 }
 
-#footer{
-	background-color: rgba(0,0,0,0.4);
-	border-color: black;
-	border-width: medium;
-	border-style: solid;
-	bottom:0px;
-	height:30px;
-	background:#999;
-	width:98%;
-
+.content table {
+	color: #378DE5;
+	font-size: 35px;
+	text-shadow: 1px 1px 0px #fff;
+	background: #eaebec;
+	margin-left: 7%;
+	border: #378DE5 1px solid;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: 0 1px 2px #d1d1d1;
+	-webkit-box-shadow: 0 1px 2px #d1d1d1;
+	box-shadow: 0 1px 2px #d1d1d1;
+	border: #378DE5 1px solid;
 }
 
+.content table th {
+	padding: 21px 25px 22px 25px;
+	border-top: 1px solid #fafafa;
+	border-bottom: 1px solid #e0e0e0;
+	background: #ededed;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ededed),
+		to(#ebebeb));
+	background: -moz-linear-gradient(top, #ededed, #ebebeb);
+}
+
+.content table tr {
+	text-align: center;
+	padding-left: 20px;
+}
+
+.content table td:first-child {
+	text-align: left;
+	padding-left: 20px;
+	border-left: 0;
+}
+
+.content table td {
+	padding: 18px;
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+	background: #fafafa;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb),
+		to(#fafafa));
+	background: -moz-linear-gradient(top, #fbfbfb, #fafafa);
+}
+
+.content table tr:hover td {
+	background: #f2f2f2;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2),
+		to(#f0f0f0));
+	background: -moz-linear-gradient(top, #f2f2f2, #f0f0f0);
+}
+
+#tecnologias {
+	background-color: rgba(0, 0, 255, 0.4);
+}
+
+#solicitud {
+	background-color: rgba(255, 255, 0, 0.4);
+}
+
+.columnaFormulario {
+	float: left;
+	width: 50%;
+}
+
+.columnaFormulario * {
+	width: 70%;
+	height: 35px;
+	display: block;
+}
+
+.clear {
+	clear: both;
+	line-height: 0;
+}
+
+input[type=text], input[type=email], input[type=tel], input[type=date] {
+	border: thin solid #ccc;
+	border-radius: 5px;
+	color: #378DE5;
+	border: thin solid #378DE5;
+}
+
+input[type=submit] {
+	color: #378DE5;
+	background-color: #fff;
+	border: 1px solid #378DE5;
+	border-radius: 5px;
+	margin-top: 0px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #378DE5;
+	color: #fff;
+}
