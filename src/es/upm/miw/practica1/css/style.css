@@ -175,6 +175,18 @@ nav ul li a:hover {
 
 .columnaPresentacion img {
 	width: 80%;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-webkit-transition-property: -webkit-transform;
+	transition-property: transform;
+}
+
+#imagenPresen1:hover{
+	-webkit-transform: rotate(20deg);
+}
+
+#imagenPresen2:hover{
+	-webkit-transform: rotate(-20deg);
 }
 
 #asignaturas {
