@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+#contenedorParrafos div p {
+	border-color: red;
+	border-style: solid;
+	border-width: medium;
+}
+
+#contenedorParrafos {
+	display: block;
+	float: left;
+	left: 25%;
+}
+
+.botonera {
+	position: relative;
+	display: inline;
+	margin-left: 10%;
+	margin-top: 10%;
+}
+
+.primerEjercicio {
+	position: relative;
+}
+
+.segundoEjercicio {
+	position: relative;
+}
+
+.registrar {
+	width: 15%;
+	margin-top: 10%;
+}
+
+#impresion {
+	position: absolute;
+	color: white;
+	right: 0px;
+	top: 0px; width : 20%;
+	height: 700px;;
+	background-color: lightblue;
+	border-color: black;
+	border-width: medium;
+	border-style: solid;
+	width: 20%;
+}
+
+.modificarCantidad {
+	width: 15%;
+	margin-top: 10%;
+}
+</style>
+
+<script>
+	function aniadir() {
+		var div = document.createElement('div');
+		div.className = 'p';
+		div.innerHTML = "<p>Parrafo nuevo</p>";
+		document.getElementById("contenedorParrafos").appendChild(div);
+	}
+	function quitar() {
+		var contenedorParrafos = document.getElementById("contenedorParrafos");
+
+		contenedorParrafos.removeChild(contenedorParrafos.lastChild);
+	}
+
+	//Clase trabajador
+	function Trabajador(nombre, cantidad) {
+		//privado
+		var nombre = nombre;
+		//publico
+		this.cantidad = cantidad;
+		this.getNombre = function() {
+			return nombre
+		}
+		this.getCantidad = function() {
+			return this.cantidad
+		}
+		this.ahorrar = function ahorrar() {
+			array[parseInt(document.getElementById('numeroAhorro').value)].cantidad += parseInt(document.getElementById('cantidadAhorro').value);
+			mostrar();
+
+		}
+		this.gastar = function gastar() {
+			array[parseInt(document.getElementById('numeroAhorro').value)].cantidad -= parseInt(document.getElementById('cantidadAhorro').value);
+			mostrar();
+
+		}
+	}
+	//Array de trabajadores
+	var array = new Array();
+	var index = 0;
+	function registrar() {
+		array[index] = new Trabajador(document.getElementById('nombre').value,
+				parseInt(document.getElementById('cantidad').value));
+		mostrar();	
+		index++;
+	}
+	
+
+	
+	
+	function mostrar(){
+		var mensaje="";
+		for (var trabajador in array) {
+			mensaje = mensaje + "<br>"+trabajador+". Trabajador "+array[trabajador].getNombre()+" tiene ahorrado "+array[trabajador].cantidad;
+			document.getElementById("impresion").innerHTML=mensaje;
+			trabajador++;
+		}
+	}
+</script>
+</head>
+<body>
+	<div class="primerEjercicio">
+		<div id="contenedorParrafos"></div>
+		<div class="botonera">
+			<button id="aniadir" onclick="aniadir()">Aniadir parrafo</button>
+			<button id="quitar" onclick="quitar()">Quitar parrafo</button>
+
+		</div>
+	</div>
+	<div class="segundoEjercicio">
+
+		<div class="registrar">
+			<fieldset>
+				<legend>Datos del trabajador</legend>
+				Nombre<input type="text" id="nombre" /> Cantidad<input
+					type="number" id="cantidad" />
+				<button onclick="registrar()">Registrar</button>
+			</fieldset>
+		</div>
+		<div class="modificarCantidad">
+			<fieldset>
+				<legend>Datos del ahorro</legend>
+				Numero<input type="number" id="numeroAhorro" /> Cantidad<input
+					type="number" id="cantidadAhorro" />
+				<button onclick="ahorrar()">Ahorrar</button>
+				<button onclick="gastar()">Gastar</button>
+			</fieldset>
+
+
+
+		</div>
+		<div id="impresion"></div>
+
+
+
+	</div>
+
+</body>
+</html>
