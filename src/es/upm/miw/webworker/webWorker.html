@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function startWorker() {
+		//Lo creo
+		
+		var worker = new Worker("script.js");
+		//El padre puede pasar mediante postMessage parametros al worker tambien
+		//Cada vez que el worker me mande un mensaje
+		onmessage = function(event){
+			alert(event.data)
+		}
+	}
+</script>
+</head>
+<body>
+
+	<button onclick="startWorker()">Calcular</button>
+	<div class="consola"></div>
+
+
+
+</body>
+<style>
+.consola {
+	position: absolute;
+	left: 65%;
+	width: 30%;
+	height: 70%;
+	background-color: lightblue;
+	border-color: black;
+	border-width: thin;
+	border-style: solid;
+	overflow: scroll;
+}
+.
+</style>
+</html>

@@ -7,43 +7,29 @@
 <script src="js/script.js"></script>
 </head>
 <body>
+	<div class="factura">
 
-	<form>
-		<label>Fecha de Emision</label>
-		<input type="text" name="fechaEmision" readonly/>
+		<form>
+			<label>Fecha de Emision</label> <input type="text"
+				name="fechaEmision" readonly /> <label>Dias para abonar</label><br><label>90</label> <input
+				type="radio" /> <label>120</label> <input type="radio" /> <label>180</label>
+			<input type="radio" /><br> <label>Fecha limite de pago</label> <input
+				type="text" name="fechaLimite" readonly /> <label>Concepto</label>
+			<input type="text" name="concepto" /> <label>Precio Unidad</label> <input
+				type="number" name="precioUnidad" /> <label>Numero de
+				unidades</label> <input type="number" name="numeroUnidades" /> <label>Precio</label>
+			<input type="number" name="precio" />
+			<button>Añadir concepto</button>
 
-		<label>90</label>
-		<input type="radio"/>
-		<label>120</label>
-		<input type="radio"/>
-		<label>180</label>
-		<input type="radio"/>
+			<label>Subtotal</label> <input type="number" name="subtotal" readonly />
 
-		<label>Fecha limite de pago</label>
-		<input type="text" name="fechaLimite" readonly/>
+			<label>IVA</label> <input type="text" name="iva" readonly /> <label>TOTAL</label>
+			<input type="text" name="total" readonly />
 
-		<label>Concepto</label>
-		<input type="text" name="concepto"/>
-		<label>Precio Unidad</label>
-		<input type="number" name="precioUnidad"/>
-		<label>Numero de unidades</label>
-		<input type="number" name="numeroUnidades"/>
-		<label>Precio</label>
-		<input type="number" name="precio"/>
-
-		<label>Subtotal</label>
-		<input type="number" name="subtotal" readonly/>
-
-		<label>IVA</label>
-		<input type="text" name="iva" readonly/>
-
-		<label>TOTAL</label>
-		<input type="text" name="total" readonly/>
-
-		<button type="submit" name="calcular"> Calcular</button>
+			<button type="submit" name="calcular">Calcular</button>
 
 
-	</form>
-
+		</form>
+	</div>
 </body>
 </html>

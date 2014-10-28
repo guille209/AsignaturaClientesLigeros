@@ -1,1 +1,22 @@
 @CHARSET "ISO-8859-1";
+
+.factura{
+	position: absolute;
+	left:32%;
+	top:10%;
+	width:35%;
+	background-color: 44ecff;
+	border-style: solid;
+	border-color: black;
+	border-width: medium;
+}
+
+form *:not([type="radio"]){
+	width:90%;
+	margin-left: 5%;
+	margin-bottom: 3%;
+}
+
+form{
+	margin-top: 2%;
+}
