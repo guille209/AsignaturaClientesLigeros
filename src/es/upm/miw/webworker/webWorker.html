@@ -2,10 +2,12 @@
 <html>
 <head>
 <script>
+var worker;
 	function startWorker() {
 		//Lo creo
 		
-		var worker = new Worker("script.js");
+		worker = new Worker("script.js");
+		worker.postMessage("Hello world");
 		//El padre puede pasar mediante postMessage parametros al worker tambien
 		//Cada vez que el worker me mande un mensaje
 		onmessage = function(event){
