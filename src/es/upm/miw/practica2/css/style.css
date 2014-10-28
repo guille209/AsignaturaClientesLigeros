@@ -1,5 +1,22 @@
 @CHARSET "ISO-8859-1";
 
+.centrado{
+	margin: 0 auto
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
 .factura{
 	position: absolute;
 	left:32%;
@@ -10,13 +27,31 @@
 	border-color: black;
 	border-width: medium;
 }
-
-form *:not([type="radio"]){
+ .datos *:not([type="radio"]){
 	width:90%;
 	margin-left: 5%;
 	margin-bottom: 3%;
+} 
+
+.conceptos * {
+	margin-left: 5%;
+	margin-bottom: 3%;
+	width: 18%;
+	display: inline;
+}
+
+.conceptos{
+	width: 99%;
+}
+
+#aniadirConcepto{
+	background-image: url(../res/add.PNG)no-repeat;
+}
+
+#eliminarConcepto{
+	background-color: red;
 }
 
 form{
 	margin-top: 2%;
-}
+} */

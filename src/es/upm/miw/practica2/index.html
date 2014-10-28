@@ -6,30 +6,27 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script src="js/script.js"></script>
 </head>
-<body>
-	<div class="factura">
+<body onload="cargarFecha()">
 
-		<form>
-			<label>Fecha de Emision</label> <input type="text"
-				name="fechaEmision" readonly /> <label>Dias para abonar</label><br><label>90</label> <input
-				type="radio" /> <label>120</label> <input type="radio" /> <label>180</label>
-			<input type="radio" /><br> <label>Fecha limite de pago</label> <input
-				type="text" name="fechaLimite" readonly /> <label>Concepto</label>
-			<input type="text" name="concepto" /> <label>Precio Unidad</label> <input
-				type="number" name="precioUnidad" /> <label>Numero de
-				unidades</label> <input type="number" name="numeroUnidades" /> <label>Precio</label>
-			<input type="number" name="precio" />
-			<button>Añadir concepto</button>
+	<form>
+		<label>Fecha de Emision</label> <input type="text" name="fechaEmision"
+			id="fechaEmision" disabled /> <label>Dias para abonar</label> <input
+			type="text" name="fechaAbonar" id="fechaAbonar" disabled /> <label>90</label>
+		<input type="radio" name="dias" /> <label>120</label> <input
+			type="radio" name="dias" /> <label>180</label> <input type="radio"
+			name="dias" /> <label>Fecha limite de pago</label> <input
+			type="text" name="fechaLimite" disabled /> <input type="text"
+			name="concepto" placeholder="Concepto" /><input type="number"
+			name="precioUnidad" placeholder="Precio/unidad" /><input
+			type="number" name="numeroUnidades" placeholder="Cantidad" /> <input
+			type="number" name="precio" placeholder="Importe" disabled />
+		<button id="aniadirConcepto">Añadir concepto</button>
+		<button id="eliminarConcepto">Eliminar concepto</button>
+		<label>Subtotal</label> <input type="number" name="subtotal" disabled />
+		<label>IVA</label> <input type="text" name="iva" disabled /> <label>TOTAL</label>
+		<input type="text" name="total" disabled />
+		<button type="submit" name="calcular">Calcular</button>
+	</form>
 
-			<label>Subtotal</label> <input type="number" name="subtotal" readonly />
-
-			<label>IVA</label> <input type="text" name="iva" readonly /> <label>TOTAL</label>
-			<input type="text" name="total" readonly />
-
-			<button type="submit" name="calcular">Calcular</button>
-
-
-		</form>
-	</div>
 </body>
 </html>
