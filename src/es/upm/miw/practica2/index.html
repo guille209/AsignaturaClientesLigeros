@@ -10,16 +10,31 @@
 
 	<form>
 		<label>Fecha de Emision</label> <input type="text" name="fechaEmision"
-			id="fechaEmision" disabled /> <label>Dias para abonar</label> <input
-			type="text" name="fechaAbonar" id="fechaAbonar" disabled /> <label>90</label>
-		<input type="radio" name="dias" /> <label>120</label> <input
-			type="radio" name="dias" /> <label>180</label> <input type="radio"
-			name="dias" /> <label>Fecha limite de pago</label> <input
-			type="text" name="fechaLimite" disabled /> <input type="text"
-			name="concepto" placeholder="Concepto" /><input type="number"
-			name="precioUnidad" placeholder="Precio/unidad" /><input
-			type="number" name="numeroUnidades" placeholder="Cantidad" /> <input
-			type="number" name="precio" placeholder="Importe" disabled />
+			id="fechaEmision" disabled /><input type="radio" name="dias"
+			value="90" onclick="calcularFecha(this)" /> <label>90</label><input
+			type="radio" name="dias" value="120" onclick="calcularFecha(this)" />
+		<label>120</label> <input type="radio" name="dias" value="180"
+			onclick="calcularFecha(this)" /><label>180</label> <label>Fecha
+			limite de pago</label> <input type="text" id="fechaLimite" name="fechaLimite"
+			disabled />
+		<table>
+			<thead></thead>
+			<tbody>
+				<tr>
+					<th>Concepto</th>
+					<th>Precio/Unidad</th>
+					<th>Cantidad</th>
+					<th>Importe</th>
+				</tr>
+				<tr>
+					<td>Tornillo</td>
+					<td>1</td>
+					<td>5</td>
+					<td>5</td>
+				</tr>
+			</tbody>
+		</table>
+
 		<button id="aniadirConcepto">Añadir concepto</button>
 		<button id="eliminarConcepto">Eliminar concepto</button>
 		<label>Subtotal</label> <input type="number" name="subtotal" disabled />
