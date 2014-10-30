@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Mi factura</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script src="js/script.js"></script>
 </head>
@@ -28,15 +28,15 @@
 				</tr>
 				<tr>
 					<td contentEditable=true></td>
-					<td contentEditable=true> </td>
-					<td contentEditable=true> </td>
+					<td contentEditable=true onkeyup="calcularDatos(this)"></td>
+					<td contentEditable=true onkeyup="calcularDatos(this)"></td>
 					<td class="importe"> </td>
 				</tr>
 			</tbody>
 		</table>
 
 		<button id="btnAniadir" type="button" onclick="aniadirConcepto()">Añadir concepto</button>
-		<button id="btnEliminar" type="button" onclick="eliminarConcepto()" disabled>Eliminar concepto</button>
+		<button id="btnEliminarTodo" type="button" onclick="eliminarTodosConcepto()" disabled>Eliminar conceptos</button>
 		<label>Subtotal</label> <input type="number" name="subtotal" disabled />
 		<label>IVA</label> <input type="text" name="iva" disabled /> <label>TOTAL</label>
 		<input type="text" name="total" disabled />
