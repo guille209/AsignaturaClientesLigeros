@@ -27,21 +27,23 @@
 					<th>Importe</th>
 				</tr>
 				<tr>
-					<td contentEditable=true></td>
-					<td contentEditable=true onkeyup="calcularDatos(this)"></td>
-					<td contentEditable=true onkeyup="calcularDatos(this)"></td>
-					<td class="importe"> </td>
+					<td contentEditable=true  onkeyup="calcularImporte(this)"></td>
+					<td contentEditable=true onkeyup="calcularImporte(this)"></td>
+					<td contentEditable=true onkeyup="calcularImporte(this)"></td>
+					<td class="importe"></td>
 				</tr>
 			</tbody>
 		</table>
 
 		<button id="btnAniadir" type="button" onclick="aniadirConcepto()">Añadir concepto</button>
 		<button id="btnEliminarTodo" type="button" onclick="eliminarTodosConcepto()" disabled>Eliminar conceptos</button>
-		<label>Subtotal</label> <input type="number" name="subtotal" disabled />
-		<label>IVA</label> <input type="text" name="iva" disabled /> <label>TOTAL</label>
-		<input type="text" name="total" disabled />
+		<label>Subtotal</label> <input type="number" id="subtotal" name="subtotal" disabled />
+		<label>IVA</label> <input type="text" id="iva" name="iva" disabled /> <label>TOTAL</label>
+		<input type="text" id="total" name="total" disabled />
 		<button type="submit" name="calcular">Calcular</button>
 	</form>
+	
+	<div id="consola"></div>
 
 </body>
 </html>

@@ -12,35 +12,35 @@ function calcularFecha(radiobutton) {
 			.toLocaleDateString("es-ES");
 }
 
-function aniadirConcepto() {	
+function aniadirConcepto() {
 	var table = document.getElementById("myTable");
 	if (table.rows.length < 9) {
 		var row = table.insertRow(table.rows.length);
 		for (var i = 0; i <= 4; i++) {
 			if (i < 3) {
 				row.insertCell(i).contentEditable = true;
-				//Importe
-			} else if(i==3){
+				table.rows[table.rows.length - 1].cells[i].setAttribute('onkeyup',
+				"calcularImporte(this)");
+				// Importe
+			} else if (i == 3) {
 				row.insertCell(i).className = "importe";
-				//Eliminar
-			}else{
+				// Eliminar
+			} else {
 				row.insertCell(i).innerHTML = "<button class=\"btnEliminar\" type=\"button\" onclick=\"eliminarConcepto(this)\">x</button>";
 			}
 		}
 	}
-	table.rows[table.rows.length-1].cells[1].setAttribute('onkeyup',"calcularDatos(this)");
-	table.rows[table.rows.length-1].cells[2].setAttribute('onkeyup',"calcularDatos(this)");
-		comprobarNumeroConceptos();
+	comprobarNumeroConceptos();
 }
 function eliminarConcepto(miBoton) {
 	miBoton.parentNode.parentNode.remove();
 	comprobarNumeroConceptos();
 }
 
-function eliminarTodosConcepto(){
+function eliminarTodosConcepto() {
 	var table = document.getElementById("myTable");
 	if (table.rows.length > 2) {
-		for(var index=table.rows.length-1;index>=2;index--){
+		for (var index = table.rows.length - 1; index >= 2; index--) {
 			table.deleteRow(index);
 		}
 	}
@@ -48,27 +48,54 @@ function eliminarTodosConcepto(){
 }
 
 function comprobarNumeroConceptos() {
-	//activa o desactiva los botones de eliminar y/o aniadir
+	// activa o desactiva los botones de eliminar y/o aniadir
 	var table = document.getElementById("myTable");
 	if (table.rows.length > 2) {
 		document.getElementById("btnEliminarTodo").disabled = false;
-	}else {
+	} else {
 		document.getElementById("btnEliminarTodo").disabled = true;
 	}
-	if(table.rows.length == 8){
+	if (table.rows.length == 8 || table.rows.length == 2) {
 		document.getElementById("btnAniadir").disabled = false;
 	}
-	if(table.rows.length == 9){
+	if (table.rows.length == 9) {
 		document.getElementById("btnAniadir").disabled = true;
+	}
+	calcularTotales();
+}
+
+function calcularImporte(miTd) {
+	var precioUnidad = miTd.parentNode.cells[1].innerHTML;
+	var cantidad = miTd.parentNode.cells[2].innerHTML;
+	
+	if (camposRellenados(miTd)) {
+		miTd.parentNode.cells[3].innerHTML = parseInt(precioUnidad)
+				* parseInt(cantidad);
+		calcularTotales();
 	}
 }
 
-function calcularDatos(miTd){
-	var precioUnidad = miTd.parentNode.cells[1].innerHTML;
-	var cantidad = miTd.parentNode.cells[2].innerHTML;
-	if(precioUnidad!=""&&cantidad!=""){
-		alert("calculardatos");
-		miTd.parentNode.cells[3].innerHTML = parseInt(precioUnidad) * parseInt(cantidad);
-		
+function camposRellenados(miTd){
+	if(miTd.parentNode.cells[1].innerHTML != "" && miTd.parentNode.cells[2].innerHTML != "" && miTd.parentNode.cells[0].innerHTML != "" && /^\d+$/.test(miTd.parentNode.cells[1].innerHTML) && /^\d+$/.test(miTd.parentNode.cells[2].innerHTML)){
+		return true;
+	}else{
+		return false;
 	}
+}
+
+function calcularTotales() {
+	var importes = document.getElementsByClassName("importe");
+	var total = 0;
+	
+	for(var i=0;i<importes.length;i++){
+		if (importes[i].innerHTML != ""&& importes[i].innerHTML != "undefined"){
+			document.getElementById("consola").innerHTML += "<br>"+importes[i].innerHTML+"<br>";
+			total += parseInt(importes[i].innerHTML);
+		}
+	}
+
+	document.getElementById("consola").innerHTML += "total es "+total+"<br>------------------";
+	var subtotal = document.getElementById("subtotal").value = total;
+	var iva = document.getElementById("iva").value = (total*21)/100;
+	document.getElementById("total").value = subtotal + iva;
 }
