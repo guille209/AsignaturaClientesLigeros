@@ -5,6 +5,7 @@
 <title>Mi factura</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script src="js/script.js"></script>
+<script src="js/chart.min.js"></script>
 </head>
 <body onload="cargarDatosIniciales()">
 
@@ -27,7 +28,7 @@
 					<th>Importe</th>
 				</tr>
 				<tr>
-					<td contentEditable=true  onkeyup="calcularImporte(this)"></td>
+					<td contentEditable=true onkeyup="calcularImporte(this)"></td>
 					<td contentEditable=true onkeyup="calcularImporte(this)"></td>
 					<td contentEditable=true onkeyup="calcularImporte(this)"></td>
 					<td class="importe"></td>
@@ -35,14 +36,22 @@
 			</tbody>
 		</table>
 
-		<button id="btnAniadir" type="button" onclick="aniadirConcepto()">Añadir concepto</button>
-		<button id="btnEliminarTodo" type="button" onclick="eliminarTodosConcepto()" disabled>Eliminar conceptos</button>
-		<label>Subtotal</label> <input type="number" id="subtotal" name="subtotal" disabled />
-		<label>IVA</label> <input type="text" id="iva" name="iva" disabled /> <label>TOTAL</label>
-		<input type="text" id="total" name="total" disabled />
-		<button type="submit" name="calcular">Calcular</button>
+		<button id="btnAniadir" type="button" onclick="aniadirConcepto()">Añadir
+			concepto</button>
+		<button id="btnEliminarTodo" type="button"
+			onclick="eliminarTodosConcepto()" disabled>Eliminar
+			conceptos</button>
+		<label>Subtotal</label> <input type="number" id="subtotal"
+			name="subtotal" disabled /> <label>IVA</label> <input type="text"
+			id="iva" name="iva" disabled /> <label>TOTAL</label> <input
+			type="text" id="total" name="total" disabled />
+<!-- 		<button type="button" name="calcular" onclick="generarGrafica()">Generar
+			grafica</button> -->
 	</form>
-	
+	<div id="contenedorCanvas">
+		<canvas id="myChart" width="400" height="400"></canvas>
+	</div>
+
 	<div id="consola"></div>
 
 </body>

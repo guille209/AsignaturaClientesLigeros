@@ -1,5 +1,7 @@
 var fechaActual = new Date();
+
 function cargarDatosIniciales() {
+	// Chart.defaults.global.responsive = true;
 	// Fecha emision
 	document.getElementById("fechaEmision").value = fechaActual
 			.toLocaleDateString("es-ES");
@@ -19,8 +21,8 @@ function aniadirConcepto() {
 		for (var i = 0; i <= 4; i++) {
 			if (i < 3) {
 				row.insertCell(i).contentEditable = true;
-				table.rows[table.rows.length - 1].cells[i].setAttribute('onkeyup',
-				"calcularImporte(this)");
+				table.rows[table.rows.length - 1].cells[i].setAttribute(
+						'onkeyup', "calcularImporte(this)");
 				// Importe
 			} else if (i == 3) {
 				row.insertCell(i).className = "importe";
@@ -65,37 +67,86 @@ function comprobarNumeroConceptos() {
 }
 
 function calcularImporte(miTd) {
+
 	var precioUnidad = miTd.parentNode.cells[1].innerHTML;
 	var cantidad = miTd.parentNode.cells[2].innerHTML;
-	
+
 	if (camposRellenados(miTd)) {
+
 		miTd.parentNode.cells[3].innerHTML = parseInt(precioUnidad)
 				* parseInt(cantidad);
 		calcularTotales();
+		
+	
 	}
 }
 
-function camposRellenados(miTd){
-	if(miTd.parentNode.cells[1].innerHTML != "" && miTd.parentNode.cells[2].innerHTML != "" && miTd.parentNode.cells[0].innerHTML != "" && /^\d+$/.test(miTd.parentNode.cells[1].innerHTML) && /^\d+$/.test(miTd.parentNode.cells[2].innerHTML)){
+function camposRellenados(miTd) {
+	if (miTd.parentNode.cells[1].innerHTML != ""
+			&& miTd.parentNode.cells[2].innerHTML != ""
+			&& miTd.parentNode.cells[0].innerHTML != ""
+			&& /^\d+$/.test(miTd.parentNode.cells[1].innerHTML)
+			&& /^\d+$/.test(miTd.parentNode.cells[2].innerHTML)) {
 		return true;
-	}else{
+	} else {
 		return false;
 	}
+}
+
+function generarGrafica() {
+	var table = document.getElementById("myTable");
+	var importe;
+	var data = [
+	];
+	var subtotal = document.getElementById("subtotal").value;	
+	for (var index = 1; index < table.rows.length; index++) {
+		importe = table.rows[index].cells[3].innerHTML;
+		var randomColor = getRandomColor();
+		if (importe != "") {
+			data.push({
+				value : parseInt(100 * (importe/subtotal)),
+				color : randomColor,
+				highlight : randomColor,
+				label : table.rows[index].cells[0].innerHTML
+			});
+		}
+	}
+	document.getElementById("contenedorCanvas").removeChild(document.getElementById("myChart"));
+	var canvas = document.createElement("canvas");
+	canvas.setAttribute("id","myChart");
+	canvas.setAttribute("height",300);
+	canvas.setAttribute("width",300);
+	document.getElementById("contenedorCanvas").appendChild(canvas);
+	var ctx = document.getElementById("myChart").getContext("2d");
+	
+	var myNewChart = new Chart(ctx).Doughnut(data);
+
+	
+}
+
+function getRandomColor() {
+	var letters = '0123456789ABCDEF'.split('');
+	var color = '#';
+	for (var i = 0; i < 6; i++) {
+		color += letters[Math.floor(Math.random() * 16)];
+	}
+	return color;
 }
 
 function calcularTotales() {
 	var importes = document.getElementsByClassName("importe");
 	var total = 0;
-	
-	for(var i=0;i<importes.length;i++){
-		if (importes[i].innerHTML != ""&& importes[i].innerHTML != "undefined"){
-			document.getElementById("consola").innerHTML += "<br>"+importes[i].innerHTML+"<br>";
+
+	for (var i = 0; i < importes.length; i++) {
+		if (importes[i].innerHTML != "" && importes[i].innerHTML != "undefined") {
 			total += parseInt(importes[i].innerHTML);
 		}
 	}
 
-	document.getElementById("consola").innerHTML += "total es "+total+"<br>------------------";
 	var subtotal = document.getElementById("subtotal").value = total;
-	var iva = document.getElementById("iva").value = (total*21)/100;
+	var iva = document.getElementById("iva").value = (total * 21) / 100;
 	document.getElementById("total").value = subtotal + iva;
+	generarGrafica();
+	
+
 }
