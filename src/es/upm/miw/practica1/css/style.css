@@ -41,8 +41,7 @@ img {
 	z-index: -1;
 }
 
-@
--webkit-keyframes aparecerTitulo { 0%{
+@-webkit-keyframes aparecerTitulo { 0%{
 	opacity: 0;
 	-webkit-transform: rotate(90deg);
 }
@@ -160,89 +159,35 @@ nav ul li a:hover {
 }
 
 /*Animacion definida*/
-@
--webkit-keyframes aparecerSeccion { 0%{
+@-webkit-keyframes aparecerSeccion { 
+	
+	0%{
 	top: 0px;
 	left: 1000px;
 	opacity: 0.1;
-}
+	}
 
-25%{
-top
-:
-0px;
-
-		
-left
-:
-750px;
-
-		
-opacity
-:
-0
-.3
-;
-
+	25%{
+	top: 0px;
+	left:750px;
+	opacity:0.3;
+	}
 	
-}
-50%{
-top
-:
-0px;
-
-		
-left
-:
-500px;
-
-		
-opacity
-:
-0
-.4
-;
-
-		
+	50%{
+	top:0px;
+	left:500px;
+	opacity:0.4;
+	}
 	
-}
-75%{
-top
-:
-0px;
-
-		
-left
-:
-250px;
-
-		
-opacity
-:
-0
-.8
-;
-/*-webkit-transform: rotate(90deg); */
-
-	
-}
-100%{
-top
-:
-0px;
-
-		
-left
-:
-0px;
-
-		
-opacity
-:
-1;
-
-
-	
+	75%{
+	top:0px;		
+	left:250px;
+	opacity:0.8;
+	}
+	100%{
+	top:0px;
+	left:0px;
+	opacity:1;
 }
 }
 .columnaPresentacion {
