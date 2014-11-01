@@ -21,13 +21,13 @@ h2 {
 	background-color: #FFFFFF;
 	border-color: black;
 	border-style: solid;
-	width:95%;
+	width: 95%;
 }
 
-img{
-	padding:2px;
-   	border:1px solid #021a40;
-  	 background-color:#E5ED21;
+img {
+	padding: 2px;
+	border: 1px solid #021a40;
+	background-color: #E5ED21;
 }
 
 ::-webkit-input-placeholder {
@@ -38,33 +38,53 @@ img{
 #tablaTitulo {
 	width: 100%;
 	-webkit-animation: aparecerTitulo 3.5s 1;
-	z-index:-1;
+	z-index: -1;
 }
 
-
-@-webkit-keyframes aparecerTitulo{
-	0%{
-		opacity:0;
-		-webkit-transform: rotate(90deg); 
-	}
-	25%{
-		opacity:0.2;
-		
-	}
-	50%{
-		opacity:0.4;
-		
-	}
-	75%{
-		opacity:0.8;
-	}
-	100%{
-		opacity:1;
-	}
-
+@
+-webkit-keyframes aparecerTitulo { 0%{
+	opacity: 0;
+	-webkit-transform: rotate(90deg);
 }
 
-#tablaTitulo h1{
+25%{
+opacity
+:
+0
+.2
+;
+
+		
+	
+}
+50%{
+opacity
+:
+0
+.4
+;
+
+		
+	
+}
+75%{
+opacity
+:
+0
+.8
+;
+
+	
+}
+100%{
+opacity
+:
+1;
+
+	
+}
+}
+#tablaTitulo h1 {
 	background-image: url('../res/titleRibbon.jpg');
 	background-repeat: no-repeat;
 	background-position: left;
@@ -79,13 +99,12 @@ td img {
 	position: relative;
 	list-style-type: none;
 	text-align: right;
-	z-index:1;
+	z-index: 1;
 }
 
 nav ul li {
 	display: inline;
 	padding: 25px 15px;
-	
 }
 
 nav ul li a {
@@ -114,17 +133,17 @@ nav ul li a:hover {
 	position: relative;
 	margin-top: 2%;
 	margin-left: 1%;
-	z-index:1;
+	z-index: 1;
 }
 
-.separador{
-	position:relative;
+.separador {
+	position: relative;
 	background-image: url(../res/separador.PNG);
 	background-repeat: no-repeat;
 	background-position: left;
 	height: 87px;
-	width:40%;
-	margin-left:30%;
+	width: 40%;
+	margin-left: 30%;
 	margin-top: 1%;
 }
 
@@ -141,38 +160,91 @@ nav ul li a:hover {
 }
 
 /*Animacion definida*/
-@-webkit-keyframes aparecerSeccion{
-	0%{
-		top:0px;
-		left:1000px;
-		opacity:0.1;
-	}
-	25%{
-		top:0px;
-		left:750px;
-		opacity:0.3;
-	}
-	50%{
-		top:0px;
-		left:500px;
-		opacity:0.4;
-		
-	}
-	75%{
-		top:0px;
-		left:250px;
-		opacity:0.8;
-		/*-webkit-transform: rotate(90deg); */
-	}
-	100%{
-		top:0px;
-		left:0px;
-		opacity:1;
-
-	}
-
+@
+-webkit-keyframes aparecerSeccion { 0%{
+	top: 0px;
+	left: 1000px;
+	opacity: 0.1;
 }
 
+25%{
+top
+:
+0px;
+
+		
+left
+:
+750px;
+
+		
+opacity
+:
+0
+.3
+;
+
+	
+}
+50%{
+top
+:
+0px;
+
+		
+left
+:
+500px;
+
+		
+opacity
+:
+0
+.4
+;
+
+		
+	
+}
+75%{
+top
+:
+0px;
+
+		
+left
+:
+250px;
+
+		
+opacity
+:
+0
+.8
+;
+/*-webkit-transform: rotate(90deg); */
+
+	
+}
+100%{
+top
+:
+0px;
+
+		
+left
+:
+0px;
+
+		
+opacity
+:
+1;
+
+
+	
+}
+}
 .columnaPresentacion {
 	float: left;
 	width: 45%;
@@ -187,11 +259,11 @@ nav ul li a:hover {
 	transition-property: transform;
 }
 
-#imagenPresen1:hover{
+#imagenPresen1:hover {
 	-webkit-transform: rotate(20deg);
 }
 
-#imagenPresen2:hover{
+#imagenPresen2:hover {
 	-webkit-transform: rotate(-20deg);
 }
 
@@ -259,8 +331,8 @@ nav ul li a:hover {
 }
 
 .nubeEtiquetas {
-	margin-left:20%;
-	margin-right:20%;
+	margin-left: 20%;
+	margin-right: 20%;
 	line-height: 1.5em;
 	text-align: center;
 }
@@ -269,19 +341,33 @@ nav ul li a:hover {
 	display: inline;
 }
 
-a.tag1 { font-size: 220%; font-weight: 100; }
-a.tag2 { font-size: 160%; font-weight: 200; }
-a.tag3 { font-size: 100%; font-weight: 300; }
-a.tag4 { font-size: 50%; font-weight: 400; }
+a.tag1 {
+	font-size: 220%;
+	font-weight: 100;
+}
 
-.nubeEtiquetas li a:hover{
+a.tag2 {
+	font-size: 160%;
+	font-weight: 200;
+}
+
+a.tag3 {
+	font-size: 100%;
+	font-weight: 300;
+}
+
+a.tag4 {
+	font-size: 50%;
+	font-weight: 400;
+}
+
+.nubeEtiquetas li a:hover {
 	font-weight: bold;
 }
 
 /* 	border-color: red;
 	border-width: thick;
 	border-style: solid; */
-
 #solicitud {
 	background-color: rgba(255, 92, 71, 0.7);
 }
@@ -344,4 +430,9 @@ input[type=submit] {
 input[type=submit]:hover {
 	background-color: #378DE5;
 	color: #fff;
+}
+
+#footer {
+	margin-top: 2%;
+	margin-left: 1%;
 }

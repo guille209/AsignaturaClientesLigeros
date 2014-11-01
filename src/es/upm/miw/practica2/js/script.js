@@ -37,6 +37,7 @@ function aniadirConcepto() {
 function eliminarConcepto(miBoton) {
 	miBoton.parentNode.parentNode.remove();
 	comprobarNumeroConceptos();
+	generarGrafica();
 }
 
 function eliminarTodosConcepto() {
@@ -47,6 +48,7 @@ function eliminarTodosConcepto() {
 		}
 	}
 	comprobarNumeroConceptos();
+	generarGrafica();
 }
 
 function comprobarNumeroConceptos() {
@@ -76,6 +78,7 @@ function calcularImporte(miTd) {
 		miTd.parentNode.cells[3].innerHTML = parseInt(precioUnidad)
 				* parseInt(cantidad);
 		calcularTotales();
+		generarGrafica();
 		
 	
 	}
@@ -146,7 +149,7 @@ function calcularTotales() {
 	var subtotal = document.getElementById("subtotal").value = total;
 	var iva = document.getElementById("iva").value = (total * 21) / 100;
 	document.getElementById("total").value = subtotal + iva;
-	generarGrafica();
+	
 	
 
 }

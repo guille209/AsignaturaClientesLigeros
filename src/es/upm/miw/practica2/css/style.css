@@ -1,58 +1,161 @@
 @CHARSET "ISO-8859-1";
 
-.centrado{
+@font-face {
+	font-family: titleFont;
+	src: url(../res/fonts/writesong.ttf);
+}
+
+body {
+	font-family: 'titleFont', sans-serif;
+}
+
+.centrado {
 	margin: 0 auto
 }
 
-table, th,td {
-     border: 1px solid black; 
+/* table, th, td {
+	border: 1px solid black;
+} */
+table td {
+	contentEditable: true;
 }
 
-table td{
-	contentEditable:true;
-}
-
-.importe{
+.importe {
 	background-color: #EBEBE4;
 }
 
-/* 
+form {
+	margin-top: 4%;
+}
 
-.factura{
-	position: absolute;
-	left:32%;
-	top:2.5%;
-	width:35%;
+.factura {
+	position: relative;
+	left: 23%;
+	top: 5%;
+	width: 50%;
 	background-color: 44ecff;
 	border-style: solid;
 	border-color: black;
-	border-width: medium;
+	border-width: thin;
+	background-image: url("../res/facturabg.JPG");
 }
- .datos *:not([type="radio"]){
-	width:90%;
-	margin-left: 5%;
-	margin-bottom: 3%;
+
+ .factura *:not([type="radio"]) {
+	width:90%;	
 } 
 
-.conceptos * {
+.factura * {
+	position: relative;
 	margin-left: 5%;
 	margin-bottom: 3%;
-	width: 18%;
-	display: inline;
 }
 
-.conceptos{
-	width: 99%;
+.titulo {
+	margin-left: 13%;
+	font-size: 60px;
 }
 
-#aniadirConcepto{
-	background-image: url(../res/add.PNG)no-repeat;
+#contenedorCanvas {
+	margin-left: 23%;
 }
 
-#eliminarConcepto{
-	background-color: red;
+#footer {
+	bottom: 0px;
+	left: 0px;
 }
 
-form{
-	margin-top: 2%;
-} */
+/*Estilos botones*/
+button {
+	border: 1px solid #3b6e22;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: arial;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 6px 12px;
+	text-decoration: none;
+}
+
+button:hover {
+	
+}
+
+#btnAniadir {
+	background-color: #74ad5a;
+}
+
+#btnAniadir:hover {
+	background-color: #68a54b;
+}
+
+#btnEliminarTodo, .btnEliminar {
+	background-color: #ff8080;
+}
+
+#btnEliminarTodo:hover, .btnEliminar:hover {
+	background-color: #ff6c6c;
+}
+
+/* Estilos inputs*/
+input {
+	color: #3c3c3c;
+	font-size: 18px;
+	border-radius: 0;
+	background-color: #fbfbfb;
+	margin-bottom: 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid rgba(0, 0, 0, 1);
+}
+
+/*Estilo tabla*/
+table {
+	color: #666;
+	font-size: 22px;
+	text-shadow: 1px 1px 0px #fff;
+	background: #eaebec;
+	margin: 20px;
+	border: #ccc 1px solid;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: 0 1px 2px #d1d1d1;
+	-webkit-box-shadow: 0 1px 2px #d1d1d1;
+	box-shadow: 0 1px 2px #d1d1d1;
+}
+
+table th {
+	padding: 21px 25px 22px 25px;
+	border-top: 1px solid #fafafa;
+	border-bottom: 1px solid #e0e0e0;
+	background: #ededed;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ededed),
+		to(#ebebeb));
+	background: -moz-linear-gradient(top, #ededed, #ebebeb);
+}
+
+table tr {
+	text-align: center;
+	padding-left: 20px;
+}
+
+table td {
+	padding: 18px;
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+	background: #fafafa;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb),
+		to(#fafafa));
+	background: -moz-linear-gradient(top, #fbfbfb, #fafafa);
+}
+
+table tr:hover td {
+	background: #f2f2f2;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2),
+		to(#f0f0f0));
+	background: -moz-linear-gradient(top, #f2f2f2, #f0f0f0);
+}

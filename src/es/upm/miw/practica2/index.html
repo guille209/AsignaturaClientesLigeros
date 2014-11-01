@@ -8,51 +8,55 @@
 <script src="js/chart.min.js"></script>
 </head>
 <body onload="cargarDatosIniciales()">
-
+<div class="factura">
+<h1 class="titulo">Mi factura</h1>
 	<form>
-		<label>Fecha de Emision</label> <input type="text" name="fechaEmision"
-			id="fechaEmision" disabled /><input type="radio" name="dias"
-			value="90" onclick="calcularFecha(this)" /> <label>90</label><input
-			type="radio" name="dias" value="120" onclick="calcularFecha(this)" />
-		<label>120</label> <input type="radio" name="dias" value="180"
-			onclick="calcularFecha(this)" /><label>180</label> <label>Fecha
-			limite de pago</label> <input type="text" id="fechaLimite" name="fechaLimite"
-			disabled />
-		<table id="myTable">
-			<thead></thead>
-			<tbody>
-				<tr>
-					<th>Concepto</th>
-					<th>Precio/Unidad</th>
-					<th>Cantidad</th>
-					<th>Importe</th>
-				</tr>
-				<tr>
-					<td contentEditable=true onkeyup="calcularImporte(this)"></td>
-					<td contentEditable=true onkeyup="calcularImporte(this)"></td>
-					<td contentEditable=true onkeyup="calcularImporte(this)"></td>
-					<td class="importe"></td>
-				</tr>
-			</tbody>
-		</table>
+		<div id="fechas">
+			<label>Fecha de Emision</label> <input type="text"
+				name="fechaEmision" id="fechaEmision"   disabled /><br><input
+				type="radio" name="dias" value="90" onclick="calcularFecha(this)" />
+			<label>90 dias</label><input type="radio" name="dias" value="120"
+				onclick="calcularFecha(this)" /> <label>120 dias</label> <input
+				type="radio" name="dias" value="180" onclick="calcularFecha(this)" /><label>180 dias</label><br>
+			<label>Fecha limite de pago</label> <input type="text"
+				id="fechaLimite" name="fechaLimite"   disabled />
+		</div>
+		<div id="conceptos"  >
+			<table id="myTable"  >
+				<thead></thead>
+				<tbody>
+					<tr>
+						<th>Concepto</th>
+						<th>Precio/Unidad</th>
+						<th>Cantidad</th>
+						<th>Importe</th>
+					</tr>
+					<tr>
+						<td contentEditable=true onkeyup="calcularImporte(this)"></td>
+						<td contentEditable=true onkeyup="calcularImporte(this)"></td>
+						<td contentEditable=true onkeyup="calcularImporte(this)"></td>
+						<td class="importe"></td>
+					</tr>
+				</tbody>
+			</table>
 
-		<button id="btnAniadir" type="button" onclick="aniadirConcepto()">Añadir
-			concepto</button>
-		<button id="btnEliminarTodo" type="button"
-			onclick="eliminarTodosConcepto()" disabled>Eliminar
-			conceptos</button>
-		<label>Subtotal</label> <input type="number" id="subtotal"
-			name="subtotal" disabled /> <label>IVA</label> <input type="text"
-			id="iva" name="iva" disabled /> <label>TOTAL</label> <input
-			type="text" id="total" name="total" disabled />
-<!-- 		<button type="button" name="calcular" onclick="generarGrafica()">Generar
-			grafica</button> -->
+			<button id="btnAniadir" type="button" onclick="aniadirConcepto()">Añadir
+				concepto</button>
+			<button id="btnEliminarTodo" type="button"
+				onclick="eliminarTodosConcepto()" disabled>Eliminar
+				conceptos</button>
+		</div>
+		<div id="totales"  >
+			<label>Subtotal</label> <input type="number" id="subtotal"
+				name="subtotal" disabled /> <br><label>IVA</label> <input type="text"
+				id="iva" name="iva"   disabled /> <br><label>TOTAL</label> <input
+				type="text" id="total" name="total"   disabled />
+		</div>
 	</form>
-	<div id="contenedorCanvas">
-		<canvas id="myChart" width="400" height="400"></canvas>
+	<div id="contenedorCanvas"  >
+		<canvas id="myChart"></canvas>
 	</div>
-
-	<div id="consola"></div>
-
+	<div id="footer">Copyright © 2014 - 2015 Guillermo Miranda Garcia, All Rights Reserved.</div>
+</div>
 </body>
 </html>
