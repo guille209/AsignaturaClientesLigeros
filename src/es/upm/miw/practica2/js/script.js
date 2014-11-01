@@ -6,6 +6,20 @@ function cargarDatosIniciales() {
 	document.getElementById("fechaEmision").value = fechaActual
 			.toLocaleDateString("es-ES");
 }
+function abrirCalendario(){
+	
+	
+	 var yyyy = fechaActual.getFullYear().toString();                                    
+     var mm = (fechaActual.getMonth()+1).toString(); // getMonth() is zero-based         
+     var dd  = fechaActual.getDate().toString();             
+	document.getElementById("calendario").setAttribute("min", yyyy + '-' + (mm[1]?mm:"0"+mm[0]) + '-' + (dd[1]?dd:"0"+dd[0]));
+	document.getElementById("calendario").style.display = "block";
+	document.getElementById('calendario').onchange = function (e) {
+		
+	document.getElementById('fechaLimite').value = new Date(this.value).toLocaleDateString("es-ES");
+	
+	}
+}
 function calcularFecha(radiobutton) {
 	var fechaCalculada = new Date();
 	fechaCalculada.setMilliseconds(fechaActual.getMilliseconds()

@@ -23,6 +23,9 @@ table td {
 .importe {
 	background-color: #EBEBE4;
 }
+#calendario{
+	display:none;
+}
 
 form {
 	margin-top: 4%;

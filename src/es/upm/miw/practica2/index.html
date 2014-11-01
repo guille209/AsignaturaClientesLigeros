@@ -17,7 +17,11 @@
 				type="radio" name="dias" value="90" onclick="calcularFecha(this)" />
 			<label>90 dias</label><input type="radio" name="dias" value="120"
 				onclick="calcularFecha(this)" /> <label>120 dias</label> <input
-				type="radio" name="dias" value="180" onclick="calcularFecha(this)" /><label>180 dias</label><br>
+				type="radio" name="dias" value="180" onclick="calcularFecha(this)" /><label>180 dias</label>
+				<input
+				type="radio" name="dias" value="Elegir dia" onclick="abrirCalendario()" />
+			<label>Elegir dia</label><br>
+			<input id="calendario" type="date" name="bdaymonth" >
 			<label>Fecha limite de pago</label> <input type="text"
 				id="fechaLimite" name="fechaLimite"   disabled />
 		</div>
