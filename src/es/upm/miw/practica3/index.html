@@ -22,19 +22,19 @@
 
 </head>
 <body>
-	<form action="http://www.eui.upm.es/~salonso/master/procesa.php">
+	<form action="http://www.eui.upm.es/~salonso/master/procesa.php" onsubmit="return validateForm()" >
 		<div id="datosPersonales">
 			<fieldset>
 			<legend><label>Datos personales</label></legend>
-				<input type="text" id="nombreUsuario"
+				<input type="text" id="nombreUsuario" name="Nombre_de_usuario"
 					placeholder="Nombre de usuario"> <input type="text"
-					id="dni" placeholder="DNI (con letra)">
+					id="dni" name="DNI" placeholder="DNI (con letra)">
 			</fieldset>
 			<fieldset>
 			<legend><label>Datos de interes</label></legend>
-			<input type="number" id="cp" placeholder="Codigo Postal"> <input
-				type="text" id="provincia" placeholder="Provincia" disabled>
-			<label>Fecha de alta</label> <input type="text" id="datepicker">
+			<input type="number" id="cp" name="Codigo_Postal" placeholder="Codigo Postal"> <input
+				type="text" id="provincia" name="Provincia" placeholder="Provincia" disabled>
+			<label>Fecha de alta</label> <input type="text" id="datepicker" name="Fecha_de_alta">
 			</fieldset>
 			 <button type="submit">Enviar</button>
 		</div>
@@ -44,10 +44,10 @@
 				value="ordinario" onchange="mostrarCorreoOrdinario()"> <label>Correo
 				Ordinario</label> <input type="radio" name="metodoEnvio" value="electronico"
 				onchange="mostrarCorreoElectronico()"> <label>Correo
-				Electronico</label> <input type="email" id="email" placeholder="Email"
-				hidden="true"> <input type="text" id="direccion"
+				Electronico</label> <input type="email" id="email" name="E-mail" placeholder="Email"
+				hidden="true"> <input type="text" id="direccion" name="Direccion"
 				placeholder="Direccion" hidden="true"> <input type="text"
-				id="localidad" placeholder="Localidad" hidden="true">
+				id="localidad" name="Localidad" placeholder="Localidad" hidden="true">
 		</fieldset>
 	
 		<fieldset>
