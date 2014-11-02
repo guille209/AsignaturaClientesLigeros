@@ -9,18 +9,53 @@ body {
 	font-family: 'titleFont', sans-serif;
 }
 
-input:not([type='radio']), label {
+input:not([type='radio']), label, button {
 		font-family: 'titleFont', sans-serif;
 		height: 50px;
 		width:200px;
-		font-size: 200%;
+		font-size: 30px;
+}
+
+button{
+	background-color:#FFFFFF;
+	border-color: black;
+	border-width: thin;
+	width: 100%;
 }
 
 input[type='radio']{
 	height: 20px;
 	width:100px;
 }
+#datosPersonales{
+	position: relative;
+	width:45%;
+	float:left;
+}
 
+#datosPersonales *{
+	width:60%;
+	margin-top:2%;
+	margin-bottom:2%;
+	margin-left:20%;
+}
+
+#metodoEnvio{
+
+	position: relative;
+	width:45%;
+	float:right;
+	margin-right:10%;
+}
+#metodoEnvio input:not([type='radio']){
+	margin-left:7%;
+}
+#metodoEnvio *{
+	padding-top:2%;
+	margin-bottom:2%;
+}
+/*Lista*/
 #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
-  #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+  #sortable li { margin: 0 3px 0px 3px; padding: 0.7em; padding-left: 1.5em; font-size: 30px; height: 18px; color:black;}
+  #sortable li:hover{cursor:move; }
   #sortable li span { position: absolute; margin-left: -1.3em; }

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title></title>
+<title>Formulario alta</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 <link rel="stylesheet" type="text/css"
@@ -22,36 +22,53 @@
 
 </head>
 <body>
-	<form>
-		<input type="text" id="nombreUsuario" placeholder="Nombre de usuario">
-		<input type="text" id="dni" placeholder="DNI (con letra)"> <input
-			type="number" id="cp" placeholder="Codigo Postal"> <input
-			type="text" id="provincia" placeholder="Provincia" disabled>
-		<label>Fecha de alta</label> <input type="text" id="datepicker">
-		<label>Metodo de envio</label> <input type="radio" name="metodoEnvio"
-			value="ordinario"> <label>Correo Ordinario</label> <input
-			type="radio" name="metodoEnvio" value="electronico"> <label>Correo
-			Electronico</label> <input type="email" id="email" placeholder="Email">
-		<input type="text" id="direccion" placeholder="Direccion"> <input
-			type="text" id="localidad" placeholder="Localidad">
+	<form action="http://www.eui.upm.es/~salonso/master/procesa.php">
+		<div id="datosPersonales">
+			<fieldset>
+			<legend><label>Datos personales</label></legend>
+				<input type="text" id="nombreUsuario"
+					placeholder="Nombre de usuario"> <input type="text"
+					id="dni" placeholder="DNI (con letra)">
+			</fieldset>
+			<fieldset>
+			<legend><label>Datos de interes</label></legend>
+			<input type="number" id="cp" placeholder="Codigo Postal"> <input
+				type="text" id="provincia" placeholder="Provincia" disabled>
+			<label>Fecha de alta</label> <input type="text" id="datepicker">
+			</fieldset>
+			 <button type="submit">Enviar</button>
+		</div>
+		<div id="metodoEnvio">
+		<fieldset>
+			<legend><label>Metodo de envio</label></legend> <input type="radio" name="metodoEnvio"
+				value="ordinario" onchange="mostrarCorreoOrdinario()"> <label>Correo
+				Ordinario</label> <input type="radio" name="metodoEnvio" value="electronico"
+				onchange="mostrarCorreoElectronico()"> <label>Correo
+				Electronico</label> <input type="email" id="email" placeholder="Email"
+				hidden="true"> <input type="text" id="direccion"
+				placeholder="Direccion" hidden="true"> <input type="text"
+				id="localidad" placeholder="Localidad" hidden="true">
+		</fieldset>
+	
+		<fieldset>
+			<legend><label>Tus preferencias</label></legend>
+			<ul id="sortable">
+				<li class="ui-state-default"><span
+					class="ui-icon ui-icon-arrowthick-2-n-s"></span>Cine</li>
+				<li class="ui-state-default"><span
+					class="ui-icon ui-icon-arrowthick-2-n-s"></span>Libros</li>
+				<li class="ui-state-default"><span
+					class="ui-icon ui-icon-arrowthick-2-n-s"></span>Deporte</li>
+				<li class="ui-state-default"><span
+					class="ui-icon ui-icon-arrowthick-2-n-s"></span>Juegos</li>
+			</ul>
+			<label>Tamaño de letra del formulario</label>
+			<div id="slider"></div>
+			</fieldset>
+		</div>
 
-		<label>Ordena los temas que te interesen</label>
-		<ul id="sortable">
-			<li class="ui-state-default"><span
-				class="ui-icon ui-icon-arrowthick-2-n-s"></span>Cine</li>
-			<li class="ui-state-default"><span
-				class="ui-icon ui-icon-arrowthick-2-n-s"></span>Libros</li>
-			<li class="ui-state-default"><span
-				class="ui-icon ui-icon-arrowthick-2-n-s"></span>Deporte</li>
-			<li class="ui-state-default"><span
-				class="ui-icon ui-icon-arrowthick-2-n-s"></span>Juegos</li>
-		</ul>
-		<label>Tamaño de letra del formulario</label>
-		<div id="slider"></div>
 
-
-
-
+		
 	</form>
 
 </body>
