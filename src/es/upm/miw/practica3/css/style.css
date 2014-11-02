@@ -1,0 +1,10 @@
+@CHARSET "ISO-8859-1";
+
+@font-face {
+	font-family: titleFont;
+	src: url(../res/fonts/writesong.ttf);
+}
+
+body {
+	font-family: 'titleFont', sans-serif;
+}
