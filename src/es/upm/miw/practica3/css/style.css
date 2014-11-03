@@ -7,7 +7,9 @@
 
 body {
 	font-family: 'titleFont', sans-serif;
-}
+	background: linear-gradient(#FFFFFF,#bfffbf);
+/* 	 background-color:#bfffbf; 
+ */}
 
 input:not([type='radio']), label, button {
 		font-family: 'titleFont', sans-serif;
@@ -18,9 +20,15 @@ input:not([type='radio']), label, button {
 
 button{
 	background-color:#FFFFFF;
-	border-color: black;
+	border-color: #000000;
 	border-width: thin;
 	width: 100%;
+}
+
+input:not([disabled]):hover, button:hover{
+	background-color:#000000;
+	color: #FFFFFF;
+	border-color:#FFFFFF;
 }
 
 input[type='radio']{
@@ -54,8 +62,22 @@ input[type='radio']{
 	padding-top:2%;
 	margin-bottom:2%;
 }
+
+form fieldset{
+ background-color:#94e08d;
+}
+
+#footer {
+	position:absolute;
+	bottom: 0px;
+	left: 0px;
+	font-size: 21px;
+}
+
 /*Lista*/
 #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
   #sortable li { margin: 0 3px 0px 3px; padding: 0.7em; padding-left: 1.5em; font-size: 30px; height: 18px; color:black;}
   #sortable li:hover{cursor:move; }
   #sortable li span { position: absolute; margin-left: -1.3em; }
+  
+  

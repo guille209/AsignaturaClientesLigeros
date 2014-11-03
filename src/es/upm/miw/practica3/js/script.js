@@ -28,7 +28,8 @@ $(document)
 							});
 						}
 					});
-
+					
+					$("body").fadeIn(2500);
 					// Rellenar provincia acorde al CP
 					$("#cp")
 							.keyup(
@@ -105,5 +106,10 @@ function mostrarCorreoElectronico() {
 }
 
 function validateForm(){
-	return dniValido && emailValido;
+	if($("#email").is(":visible")){
+		return dniValido && emailValido;
+	}else{
+		return dniValido;
+	}
+		
 }
