@@ -86,6 +86,15 @@ $(document)
 							});
 					
 
+					$("input[name=metodoEnvio]:radio").change(function () {
+						if(this.value == "ordinario"){
+							mostrarCorreoOrdinario();
+						}else{
+							mostrarCorreoElectronico();
+						}
+					});
+					
+					
 				});
 
 function mostrarCorreoOrdinario() {

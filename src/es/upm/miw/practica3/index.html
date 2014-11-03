@@ -50,10 +50,9 @@
 				<legend>
 					<label>Metodo de envio</label>
 				</legend>
-				<input type="radio" name="metodoEnvio" value="ordinario"
-					onchange="mostrarCorreoOrdinario()"> <label>Correo
+				<input type="radio" name="metodoEnvio" value="ordinario"> <label>Correo
 					Ordinario</label> <input type="radio" name="metodoEnvio"
-					value="electronico" onchange="mostrarCorreoElectronico()">
+					value="electronico">
 				<label>Correo Electronico</label> <input type="text" id="email"
 					name="E-mail" placeholder="Email" hidden="true"> <input
 					type="text" id="direccion" name="Direccion" placeholder="Direccion"
@@ -67,13 +66,13 @@
 				</legend>
 				<ul id="sortable">
 					<li class="ui-state-default"><span
-						class="ui-icon ui-icon-arrowthick-2-n-s"></span>Cine</li>
+						class="ui-icon ui-icon-arrowthick-2-n-s"></span>Cine<input type='hidden' name='preferenciaX' value='Cine'/></li>
 					<li class="ui-state-default"><span
-						class="ui-icon ui-icon-arrowthick-2-n-s"></span>Libros</li>
+						class="ui-icon ui-icon-arrowthick-2-n-s"></span>Libros<input type='hidden' name='preferenciaZ' value='Libros'/></li>
 					<li class="ui-state-default"><span
-						class="ui-icon ui-icon-arrowthick-2-n-s"></span>Deporte</li>
+						class="ui-icon ui-icon-arrowthick-2-n-s"></span>Deporte<input type='hidden' name='preferenciaY' value='Deporte'/></li>
 					<li class="ui-state-default"><span
-						class="ui-icon ui-icon-arrowthick-2-n-s"></span>Juegos</li>
+						class="ui-icon ui-icon-arrowthick-2-n-s"></span>Juegos<input type='hidden' name='preferenciaW' value='Juegos'/></li>
 				</ul>
 				<label>Tamaño de letra del formulario</label>
 				<div id="slider"></div>
